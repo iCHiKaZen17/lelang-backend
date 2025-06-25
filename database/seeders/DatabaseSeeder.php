@@ -15,8 +15,11 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
-        $this->call(CarouselSeeder::class,);
-        $this->call(LelangflutterSeeder::class,);
-        $this->call(NotificationSeeder::class,);
+        $this->call([
+        CarouselSeeder::class,
+        KategoriSeeder::class,
+        LelangflutterSeeder::class,
+        NotificationSeeder::class,
+    ]);
     }
 }

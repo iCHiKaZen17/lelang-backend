@@ -15,6 +15,7 @@ class Lelangflutter extends Model
      protected $fillable = [
         'nama_barang',
         'deskripsi',
+        'kategori_id',
         'harga_awal',
         'image_path',
         'waktu_mulai',
@@ -29,5 +30,10 @@ class Lelangflutter extends Model
         return Attribute::make(
             get: fn ($value, $attributes) => Storage::url($attributes['image_path']),
         );
+    }
+
+    public function kategori()
+    {
+        return $this->belongsTo(Kategori::class,'kategori_id');
     }
 }
